@@ -30,23 +30,24 @@
 			)) ?>
 		</nav>
 		
-		<div class="site-header__social">
-			<ul class="site-header__social-list">
-				<li class="site-header__social-item">
-					<a href="#" class="site-header__social-link">
-						<img src="<?php echo get_template_directory_uri(); ?>/src/img/SVG1.svg" alt="Facebook">
+		<div class="social-menu">
+			<ul class="social-menu__list">
+				<li class="social-menu__item">
+					<a href="#" class="social-menu__link">
+						<img class="social-menu__icon" src="<?php echo get_template_directory_uri(); ?>/src/img/SVG1.svg" alt="Facebook">
 					</a>
 				</li>
-				<li class="site-header__social-item">
-					<a href="#" class="site-header__social-link">
-						<img src="<?php echo get_template_directory_uri(); ?>/src/img/SVG2.svg" alt="YouTube">
+				<li class="social-menu__item">
+					<a href="#" class="social-menu__link">
+						<img class="social-menu__icon" src="<?php echo get_template_directory_uri(); ?>/src/img/SVG2.svg" alt="YouTube">
 					</a>
 				</li>
-				<li class="site-header__social-item">
-					<a href="#" class="site-header__social-link">
-						<img src="<?php echo get_template_directory_uri(); ?>/src/img/SVG3.svg" alt="Instagram">
+				<li class="social-menu__item">
+					<a href="#" class="social-menu__link">
+						<img class="social-menu__icon" src="<?php echo get_template_directory_uri(); ?>/src/img/SVG3.svg" alt="Instagram">
 					</a>
 				</li>
 			</ul>
 		</div>
+
 	</header>

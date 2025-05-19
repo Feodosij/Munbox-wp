@@ -21,7 +21,7 @@ function munbox_setup() {
 	);
 
     add_image_size('custom-large', 728, 536, false);
-    add_image_size('custom-small', 358, 264, false);
+    add_image_size('custom-small', 358, 264, true);
 
 	// Menus
 	register_nav_menus( array(
