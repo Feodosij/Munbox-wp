@@ -41,6 +41,26 @@
                         <a href="mailto:contact@munboxweb.com">contact@munboxweb.com</a>
                         <a href="tel:+08450000202">+08455-0000-202</a>
                     </div>
+
+                    <div class="social-menu">
+                        <ul class="social-menu__list">
+                            <li class="social-menu__item">
+                                <a href="#" class="social-menu__link">
+                                    <img class="social-menu__icon" src="<?php echo get_template_directory_uri(); ?>/src/img/SVG1.svg" alt="Facebook">
+                                </a>
+                            </li>
+                            <li class="social-menu__item">
+                                <a href="#" class="social-menu__link">
+                                    <img class="social-menu__icon" src="<?php echo get_template_directory_uri(); ?>/src/img/SVG2.svg" alt="YouTube">
+                                </a>
+                            </li>
+                            <li class="social-menu__item">
+                                <a href="#" class="social-menu__link">
+                                    <img class="social-menu__icon" src="<?php echo get_template_directory_uri(); ?>/src/img/SVG3.svg" alt="Instagram">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
