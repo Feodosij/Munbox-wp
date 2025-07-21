@@ -1,7 +1,9 @@
-<article class="post small_post">
-    <div class="post_thumbnail">
-        <?php the_post_thumbnail('custom-small'); ?>
-    </div>
+<article id="post-<?php the_ID(); ?>" <?php post_class('small_post'); ?>>
+    <?php if (has_post_thumbnail()) { ?>
+        <div class="post_thumbnail">
+            <?php the_post_thumbnail('custom-small'); ?>
+        </div>
+    <?php } ?>
     <div class="post_meta">
         <span class="post_date"><?php echo get_the_date('M j, Y'); ?></span>
         <span class="meta_separator">—</span>

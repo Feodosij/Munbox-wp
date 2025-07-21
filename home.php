@@ -16,11 +16,22 @@
                 
                         get_template_part('template-parts/post', 'large');
                 
-                    }
-                } else {
+                    } ?>
+                    <div class="pagination">
+                        <?php
+                            echo paginate_links(array(
+                                'prev_text' => 'Previous',
+                                'next_text' => 'Next',
+                                'type'      => 'plain',
+                                'mid_size'  => 2,
+                            ));
+                        ?>
+                    </div>
+                <?php } else {
                     echo '<p>Записей пока нет.</p>';
                 } ?>
             </div>
+            
             <aside class="sidebar">
                 <?php get_search_form(); ?>
 
