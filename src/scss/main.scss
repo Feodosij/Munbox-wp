@@ -52,12 +52,37 @@ body {
 
 main {
     grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .container {
     max-width: calc( var(--container-width) + var(--container-padding-x) * 2);
     margin-inline: auto;
     padding-inline: var(--container-padding-x);
+}
+
+.container-single {
+    max-width: 620px;
+    margin-inline: auto;
+}
+
+a {
+    color: $font-dark;
+}
+
+.pagination {
+    flex: 0 0 auto;
+    margin: 20px 0;
+
+    .prev {
+        margin-right: 15px;
+    }
+
+    .next {
+        margin-left: 15px;
+    }
 }
 
 .site-header {
@@ -178,7 +203,7 @@ main {
 
 .banner {
     background: #f8f7f3;
-    padding: 48px 32px;
+    padding: 32px;
     margin-bottom: 64px;
 
     .banner_container {
@@ -222,9 +247,14 @@ main {
 
     .post_thumbnail {
         margin-bottom: 30px;
+        max-width: 100%;
+        height: auto
 
         img {
             object-fit: cover;
+            width: 100%;
+            height: auto;
+            display: block;
         }
     }
 
@@ -474,6 +504,7 @@ main {
 
 .footer {
     grid-row: 3;
+    flex-shrink: 0;
 
     .footer_wrap {
         background-color: #f8f7f3;

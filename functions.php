@@ -1,5 +1,8 @@
 <?php
 
+show_admin_bar(false);
+
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -20,7 +23,7 @@ function munbox_setup() {
 		)
 	);
 
-    add_image_size('custom-large', 728, 536, false);
+    add_image_size('custom-large', 728, 536, true);
     add_image_size('custom-small', 358, 264, true);
 
 	// Menus

@@ -1,7 +1,9 @@
-<article class="post large_post">
-    <div class="post_thumbnail">
-        <?php the_post_thumbnail('custom-large'); ?>
-    </div>
+<article id="post-<?php the_ID(); ?>" <?php post_class('large_post'); ?>>
+    <?php if (has_post_thumbnail()) { ?>
+        <div class="post_thumbnail">
+            <?php the_post_thumbnail('custom-large'); ?>
+        </div>
+    <?php } ?>
     <div class="post_meta">
         <span class="post_author">BY <?php the_author(); ?></span>
         <span class="meta_separator">—</span>
