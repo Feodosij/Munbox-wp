@@ -1,0 +1,141 @@
+@use 'variables' as *;
+
+// blog
+
+.blog_grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 48px;
+    margin-bottom: 64px;
+
+    @media (max-width: $tablet-s) {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0; 
+        grid-row-gap: 32px
+    }
+
+    @media (max-width: $mobile) {
+        margin-bottom: 48px;
+    }
+}
+
+.blog_posts {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+//post
+.post {
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .post_thumbnail {
+        margin-bottom: 30px;
+        max-width: 100%;
+        height: auto
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .post_meta {
+        margin-bottom: 7px;
+        color: #a3a199;
+
+        .post_category {
+            a {
+                color: #a3a199;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .post_title {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 32px;
+        letter-spacing: 0.01em;
+        color: #171822;
+        margin-bottom: 11px;
+    }
+
+    .excerpt {
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 0.01em;
+            color: #171822;
+        }
+    }
+}
+
+.large_post {
+    .post_thumbnail {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.small_post {
+    .post_thumbnail {
+        margin-bottom: 24px;
+    }
+
+    .post_meta {
+        span {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 25px;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+        }
+    }
+
+    .post_title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 0.01em;
+    }
+}
+
+
+//3 category-preview posts
+
+.category-preview {
+    margin-bottom: 32px;
+    
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 34px;
+        letter-spacing: 0.01em;
+        margin-bottom: 24px;
+    }
+
+    &__posts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 32px;
+    }
+
+    &__button {
+        max-width: fit-content;
+        margin: 0 auto;
+        margin-top: 24px;
+    }
+}

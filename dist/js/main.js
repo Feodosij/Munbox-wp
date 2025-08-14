@@ -1,2 +1,2 @@
-
+document.addEventListener("DOMContentLoaded",function(){let t=document.getElementById("burger"),c=document.getElementById("menu");var e=document.querySelectorAll(".site-menu__list a");let s=document.body;t.addEventListener("click",function(){this.classList.toggle("active"),c.classList.toggle("active"),s.classList.toggle("lock")}),e.forEach(e=>{e.addEventListener("click",function(){t.classList.remove("active"),c.classList.remove("active"),s.classList.remove("lock")})})});
 //# sourceMappingURL=main.js.map

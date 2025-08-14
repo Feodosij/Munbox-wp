@@ -1,0 +1,120 @@
+@use 'variables' as *;
+// aside
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 363px;
+
+    @media (max-width: $tablet-s) {
+        max-width: 100%;
+    }
+   
+    .sidebar_block {
+        background-color: #f8f7f3;
+        height: fit-content; 
+        padding: 32px;
+
+        h3 {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 34px;
+            letter-spacing: 0.01em;
+            color: $font-dark;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+    }
+
+    .featured_widget {
+        .featured_list {
+            .featured_item {
+                display: flex;
+                align-items: center;
+                padding: 15px 0 17px 0;
+                border-bottom: 1px solid #dfddd9;
+
+                a {
+                    text-decoration: none;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 22px;
+                    letter-spacing: 0.01em;
+                    color: $font-dark;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 2px;
+                        background-color: $font-dark;
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: transform 0.3s ease;
+                    }
+    
+                    &:hover {
+        
+                        &::after {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .category_widget {
+        .category_list {
+            .category_item {
+                display: flex;
+                align-items: center;
+                padding: 8px 0 9px 0;
+                border-bottom: 1px solid #dfddd9;
+                min-height: 45px;
+    
+                a {
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 28px;
+                    letter-spacing: 0.01em;
+                    color: #171822;
+                    position: relative;
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 5px;
+                        left: 0;
+                        right: 0;
+                        height: 2px;
+                        background-color: $font-dark;
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: transform 0.3s ease;
+                    }
+    
+                    &:hover {
+        
+                        &::after {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+    
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

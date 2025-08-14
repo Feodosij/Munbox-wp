@@ -3,7 +3,7 @@
 <main>
     <div class="banner">
         <div class="banner_container">
-            <h1>Blog</h1>
+            <h2>Blog</h2>
         </div>
     </div>
 

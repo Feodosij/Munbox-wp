@@ -29,7 +29,7 @@ Template Post Type: page
                 ?>
             </div>
             <div class="category-preview__button">
-                <a href="/blog" class="category-preview__button-link">More Posts</a>
+                <a href="/blog" class="category-preview__button-link main_yellow_button">More Posts</a>
             </div>
         </div>
 
@@ -54,7 +54,7 @@ Template Post Type: page
                 ?>
             </div>
             <div class="category-preview__button">
-                <a href="/blog" class="category-preview__button-link">More Posts</a>
+                <a href="/blog" class="category-preview__button-link main_yellow_button">More Posts</a>
             </div>
         </div>
 
@@ -78,7 +78,7 @@ Template Post Type: page
                 ?>
             </div>
             <div class="category-preview__button">
-                <a href="/blog" class="category-preview__button-link">More Posts</a>
+                <a href="/blog" class="category-preview__button-link main_yellow_button">More Posts</a>
             </div>
         </div>
 
@@ -102,7 +102,7 @@ Template Post Type: page
                 ?>
             </div>
             <div class="category-preview__button">
-                <a href="/blog" class="category-preview__button-link">More Posts</a>
+                <a href="/blog" class="category-preview__button-link main_yellow_button">More Posts</a>
             </div>
         </div>
         
