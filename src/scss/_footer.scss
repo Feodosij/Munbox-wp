@@ -1,0 +1,174 @@
+ @use 'variables' as *;
+
+// footer
+
+.footer {
+    grid-row: 3;
+    flex-shrink: 0;
+
+    .footer_wrap {
+        background-color: #f8f7f3;
+        padding: 64px 0;
+
+        @media (max-width: $tablet-s) {
+            padding: 48px 0;
+        }
+
+        @media (max-width: $mobile) {
+            padding: 32px 0;
+        }
+    }
+
+    .footer_columns {
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 64px;
+
+        @media (max-width: $tablet) {
+            grid-column-gap: 32px
+        }
+
+        @media (max-width: $tablet-s) {
+            grid-template-columns: 1fr;
+            grid-row-gap: 32px;
+        }
+
+        .footer_info {
+            .custom-logo-link {
+                margin-bottom: 25px;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 25px;
+                letter-spacing: 0.01em;
+                color: #646157; 
+            }
+        }
+
+        .footer_column {
+            h4 {
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 28px;
+                letter-spacing: 0.01em;
+                color: $font-dark;
+                margin: 0 0 19px 0;
+            }
+
+            .footer_menu {
+                .menu-item {
+                    a {
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 25px;
+                        letter-spacing: 0.01em;
+                        color: $font-dark;
+                        text-decoration: none;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            height: 2px;
+                            background-color: #171822;
+                            transform: scaleX(0);
+                            transform-origin: center;
+                            transition: transform 0.3s ease;
+                        }
+                        
+                        &:hover {
+                            &::after {
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer_contact {
+                margin-bottom: 20px;
+                
+                a {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 28px;
+                    letter-spacing: 0.01em;
+                    color: $font-dark;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+
+                    &:not(:last-child) {
+                        margin-bottom: 8px;
+                    }
+
+                    &:hover {
+                        color: #f7d376;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer_bottom {
+        max-width: 1204px;
+        margin: 0 auto;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 32px;
+
+        @media (max-width: $mobile) {
+            padding: 16px;
+        }
+
+        .copyright {
+            margin-right: 12px;
+
+            p {
+                font-size: 16px;
+                line-height: 28px;
+                letter-spacing: 0.01em;
+
+                @media (max-width: $mobile) {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .privacy {
+            a {
+                font-size: 16px;
+                line-height: 28px;
+                letter-spacing: 0.01em;
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                color: $font-dark;
+                margin-right: 16px;
+                transition: color 0.3s ease;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    color: #f7d376;
+                }
+
+                @media (max-width: $mobile) {
+                    font-size: 12px;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    .social-menu {
+        margin-left: 0;
+    }
+}

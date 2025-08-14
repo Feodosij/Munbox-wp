@@ -5,25 +5,26 @@
                 <?php the_post_thumbnail('custom-large'); ?>
             </div>
         <?php } ?>
-        <h2 class="single-post__title"><?php the_title(); ?></h2>
-        <div class="single-post__meta">
-            <?php
-            $date = get_the_date();
-            $author = get_the_author();
-            ?>
-            <?php if ( $date ) {  ?>
-                <span class="single-post__date"><?php echo esc_html( $date ); ?></span>
-            <?php } ?>
-            <?php if ( $author ) { ?>
-                <span class="single-post__author"> by <?php echo esc_html( $author ); ?></span>
-            <?php } ?>
+        <h1 class="single-post__title"><?php the_title(); ?></h1>
+        <div class="post_meta">
+            <span class="post_author">By <?php the_author(); ?></span>
+            <span class="meta_separator">—</span>
+            <span class="post_date"><?php echo get_the_date('M j, Y'); ?></span>
+            <span class="meta_separator">—</span>
+            <span class="post_category"><?php the_category(', '); ?></span>
         </div>
-        <div class="single-post__content">
-            <?php the_content(); ?>
-        </div>
-        <footer class="single-post__footer">
-            <?php the_category(', '); ?>
-            <?php the_tags('<span class="tag-links">', ', ', '</span>'); ?>
-        </footer>
     </header>
+
+    <div class="single-post__content">
+        <?php the_content(); ?>
+    </div>
+
+    <footer class="single-post__footer">
+        <div class="post-meta__categories">
+            <?php the_category(' '); ?>
+        </div>
+        <div class="post-meta__tags">
+            <?php the_tags('', ' ', ''); ?>
+        </div>
+    </footer>
 </article>

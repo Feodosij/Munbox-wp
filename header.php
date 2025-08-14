@@ -21,7 +21,7 @@
 				}
 			?>
 		</div>
-		<nav class="site-header__nav">
+		<nav class="site-header__nav" id="menu">
 			<?php wp_nav_menu( array(
 				'theme_location' => 'main_menu',
 				'container' => false,
@@ -29,6 +29,11 @@
 				'menu_id' => '',
 			)) ?>
 		</nav>
+
+		<div class="burger" id="burger">
+			<span></span>
+			<span></span>
+		</div>
 		
 		<div class="social-menu">
 			<ul class="social-menu__list">

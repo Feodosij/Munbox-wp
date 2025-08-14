@@ -1,0 +1,141 @@
+@use 'variables' as *;
+
+.container-single {
+    max-width: calc( (620px) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+    margin-top: 32px;
+
+    @media (max-width: $tablet) {
+        margin-top: 16px;
+    }
+
+    @media (max-width: $mobile) {
+        margin-top: 0;
+    }
+}
+
+.single-post {
+    margin-bottom: 32px;
+
+    @media (max-width: $mobile) {
+        margin-bottom: 16px;
+    }
+
+    &__header {
+        margin-bottom: 48px;
+    }
+
+    &__thumbnail {
+        margin-bottom: 32px;
+
+        @media (max-width: $mobile) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 37px;
+        letter-spacing: 0em;
+        color: $font-dark;
+    }
+
+    &__content {
+        font-size: 16px;
+        line-height: 1.6;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 1.5em 0 0.8em;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        ul, ol {
+            padding-left: 1.5em;
+            margin-bottom: 1.2em;
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        ol {
+            list-style: decimal;
+        }
+
+        blockquote, .wp-block-quote {
+            border-left: 4px solid $main-yellow;
+            padding-left: 1em;
+            margin: 1.5em 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        img {
+            padding: 1rem;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .wp-block-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+
+            img {
+                height: auto;
+                border-radius: 4px;
+            }
+        }
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                color: #d89e28;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: 2em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+
+        a {
+            display: inline-block;
+            padding: 0.3em 0.8em;
+            border: 1px solid $main-yellow;
+            border-radius: 50px;
+            color: $main-yellow;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $main-yellow;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
