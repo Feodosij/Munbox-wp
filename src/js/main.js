@@ -17,4 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
             body.classList.remove("lock");
 		});
 	});
+
+
+	const swiper = new Swiper('.slider', {
+		slidesPerView: 'auto',     // как на скрине — видно следующий слайд
+		spaceBetween: 32,       // отступы между слайдами
+		speed: 1000,            // скорость анимации
+		loop: true,             // зациклен
+		grabCursor: true,       // "рука" при наведении
+		navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+		},
+		pagination: {         // если нужна точечная пагинация
+		  el: '.swiper-pagination',
+		  clickable: true,
+		},
+		// breakpoints: {
+		// 768: { slidesPerView: 2 },
+		// 1024: { slidesPerView: 2.5 }
+		// }
+  	});
 });
