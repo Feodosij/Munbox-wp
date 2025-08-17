@@ -38,7 +38,11 @@ add_action( 'after_setup_theme', 'munbox_setup' );
 function munbox_enqueue_scripts() {
     wp_enqueue_style( 'munbox-theme-style', get_stylesheet_uri() ); 
     wp_enqueue_style( 'main_css', get_stylesheet_directory_uri() . '/dist/css/main.css',  array(), '1.0' );
-    wp_enqueue_script('munbox-scripts', get_template_directory_uri() . '/dist/js/main.js', [], null, true);
+
+	wp_enqueue_style( 'swiper-css', get_template_directory_uri() . '/dist/vendor/swiper-bundle.min.css', [], '11.0.0' );
+	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/dist/vendor/swiper-bundle.min.js', [], '11.0.0', true );
+
+    wp_enqueue_script( 'munbox-scripts', get_template_directory_uri() . '/dist/js/main.js', array('swiper-js'), null, true );
 }
 add_action('wp_enqueue_scripts', 'munbox_enqueue_scripts');
 

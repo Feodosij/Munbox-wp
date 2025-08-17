@@ -4,6 +4,7 @@
 @use 'footer';
 @use 'single';
 @use 'comments';
+@use 'slider-swiper';
 
 @use 'variables' as *;
 
@@ -143,10 +144,10 @@ body.lock {
 }
 
 .banner {
-    background: #f8f7f3;
+    background: $main-light;
     padding: clamp(16px, 5vw, 32px);
     height: clamp(70px, 12vw, 130px);
-    margin-bottom: 64px;    
+    margin-bottom: 64px;
 
     @media (max-width: $tablet) {
         margin-bottom: 32px;
@@ -190,7 +191,7 @@ body.lock {
   
     .search-submit {
         width: 72px;
-        background: #f7d376;
+        background: $main-yellow;
         border: none;
         cursor: pointer;
     }

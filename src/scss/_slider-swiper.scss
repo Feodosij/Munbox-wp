@@ -1,0 +1,133 @@
+@use 'variables' as *;
+
+.slider {
+    position: relative;
+    margin-bottom: 64px;
+
+    @media (max-width: $tablet-s) {
+        margin-bottom: 32px;
+    }
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        position: relative;
+        width: 100%;
+        max-width: 82.9%;
+    }
+
+    &__image {
+        img {
+            width: 100%;
+            height: 580px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__content {
+        background: $main-light;
+        padding: clamp(16px, 5vw, 48px) clamp(20px, 2vw, 32px);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        max-width: 624px;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+
+        @media (max-width: $tablet-s) {
+            max-width: 430px;
+        }
+    }
+
+    &__meta {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 25px;
+        text-transform: uppercase;
+        color: $font-grey;
+        margin-bottom: 8px;
+
+        a {
+            text-decoration: none;
+            color: $font-grey;
+
+            &:hover {
+                text-decoration: underline;
+                color: $font-dark;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 45px;
+        margin-bottom: 8px;
+
+        @media (max-width: $tablet-s) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__excerpt {
+        font-size: 16px;
+        line-height: 1.4;
+
+        @media (max-width: $tablet-s) {
+            font-size: 14px;
+        }
+    }
+
+    .swiper-slide-active {
+        .slider__content {
+            opacity: 1;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: auto !important;
+        margin-top: 0 !important;
+        transform: none !important;
+    
+        position: absolute;
+        bottom: 36px;
+        right: 0;
+        background: $main-yellow;
+        width: 56px;
+        height: 56px;
+        border-radius: 2px;
+
+            &::after {
+                font-size: 16px;
+                color: $font-dark;
+            }
+    }
+
+    .swiper-button-prev {
+        left: auto;
+        right: 68px;
+    }
+
+    .swiper-button-next {
+        left: auto;
+        right: 0;
+    }
+
+    .swiper-pagination {
+        margin-top: 12px;
+        position: static;
+    }
+}
