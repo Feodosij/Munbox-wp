@@ -21,7 +21,7 @@ get_header();
             ?>
             <div class="banner">
                 <div class="banner_container">
-                    <?php echo esc_html($title); ?>
+                    <h2><?php echo esc_html($title); ?></h2>
                 </div>
             </div>
             <?php
@@ -29,7 +29,7 @@ get_header();
             ?>
             <div class="banner">
                 <div class="banner_container">
-                    <?php echo esc_html('Archive'); ?>
+                    <h2><?php echo esc_html('Archive'); ?></h2>
                 </div>
             </div>
             <?php
