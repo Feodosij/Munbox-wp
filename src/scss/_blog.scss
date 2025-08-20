@@ -36,7 +36,7 @@
     .post_thumbnail {
         margin-bottom: 30px;
         max-width: 100%;
-        height: auto
+        height: auto;
 
         img {
             object-fit: cover;
@@ -68,6 +68,14 @@
         letter-spacing: 0.01em;
         color: #171822;
         margin-bottom: 11px;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     .excerpt {
@@ -90,6 +98,12 @@
 }
 
 .small_post {
+    max-width: 358px;
+
+    @media (max-width: $tablet-s) {
+        max-width: 100%;
+    }
+
     .post_thumbnail {
         margin-bottom: 24px;
     }
@@ -109,33 +123,8 @@
         font-size: 18px;
         line-height: 25px;
         letter-spacing: 0.01em;
+
+        
     }
 }
 
-
-//3 category-preview posts
-
-.category-preview {
-    margin-bottom: 32px;
-    
-    &__title {
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 34px;
-        letter-spacing: 0.01em;
-        margin-bottom: 24px;
-    }
-
-    &__posts {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 32px;
-    }
-
-    &__button {
-        max-width: fit-content;
-        margin: 0 auto;
-        margin-top: 24px;
-    }
-}

@@ -81,5 +81,7 @@
 
 <?php wp_footer(); ?>
 
+<button id="scrollToTop" class="scroll_to_top" aria-label="scroll to top"></button>
+
 </body>
 </html>

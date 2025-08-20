@@ -20,22 +20,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 	const swiper = new Swiper('.slider', {
-		slidesPerView: 'auto',     // как на скрине — видно следующий слайд
-		spaceBetween: 32,       // отступы между слайдами
-		speed: 1000,            // скорость анимации
-		loop: true,             // зациклен
-		grabCursor: true,       // "рука" при наведении
+		slidesPerView: 'auto',
+		spaceBetween: 32,
+		speed: 1000,
+		loop: true,
+		grabCursor: true,
 		navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 		},
-		pagination: {         // если нужна точечная пагинация
+		pagination: {
 		  el: '.swiper-pagination',
 		  clickable: true,
 		},
-		// breakpoints: {
-		// 768: { slidesPerView: 2 },
-		// 1024: { slidesPerView: 2.5 }
-		// }
   	});
+
+	// button scroll to top
+	const scrollToTop = document.getElementById("scrollToTop");
+
+	window.addEventListener("scroll", function () {
+		if(window.scrollY > 300) {
+			scrollToTop.classList.add("visible");
+		} else {
+			scrollToTop.classList.remove("visible");
+		}
+	});
+
+	scrollToTop.addEventListener("click", function () {
+		window.scrollTo({
+			top: 0
+		});
+	});
 });
