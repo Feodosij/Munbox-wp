@@ -13,6 +13,13 @@ function munbox_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption']);
+	add_theme_support( 'woocommerce' );
+
+	// woo gallery
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+
 	add_theme_support(
 		'custom-logo',
 		array(
@@ -39,12 +46,19 @@ function munbox_enqueue_scripts() {
     wp_enqueue_style( 'munbox-theme-style', get_stylesheet_uri() ); 
     wp_enqueue_style( 'main_css', get_stylesheet_directory_uri() . '/dist/css/main.css',  array(), '1.0' );
 
+	if ( class_exists( 'WooCommerce' ) && ( is_woocommerce() || is_shop() || is_product_category() || is_product() )) {
+		wp_enqueue_style( 'woocommerce_css', get_stylesheet_directory_uri() . '/dist/css/woocommerce/woocommerce.css', array( 'main_css' ), '1.0' );
+	}
+	
 	wp_enqueue_style( 'swiper-css', get_template_directory_uri() . '/dist/vendor/swiper-bundle.min.css', [], '11.0.0' );
 	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/dist/vendor/swiper-bundle.min.js', [], '11.0.0', true );
 
     wp_enqueue_script( 'munbox-scripts', get_template_directory_uri() . '/dist/js/main.js', array('swiper-js'), null, true );
 }
 add_action('wp_enqueue_scripts', 'munbox_enqueue_scripts');
+
+// disable default styles WooCommerce
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 function add_additional_class_on_li($classes, $item, $args) {
     if (isset($args->menu_class) && $args->menu_class === 'nav__list') {
@@ -65,3 +79,6 @@ function true_excerpt_more( $more ){
 }
  
 add_filter( 'excerpt_more', 'true_excerpt_more', 10, 1);
+
+// file for custom woo hooks 
+require_once get_template_directory() . '/inc/woocommerce-hooks.php';

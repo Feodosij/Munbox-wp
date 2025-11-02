@@ -85,6 +85,7 @@ body.lock {
     border: 1px solid $main-yellow;
     border-radius: 2px;
     transition: all 0.3s ease;
+    width: fit-content;
 
     &:hover {
         color: #fff;

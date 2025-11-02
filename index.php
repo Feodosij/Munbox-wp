@@ -12,7 +12,6 @@
         echo '<p>None content</p>';
     endif;
     ?>
-    hhhhhh
 </main>
 
 
