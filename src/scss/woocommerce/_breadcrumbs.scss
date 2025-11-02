@@ -1,0 +1,63 @@
+@use '../variables' as *;
+
+
+.woocommerce-breadcrumb {
+    position: relative;
+    padding: 30px 0;
+    z-index: 1;
+    margin-bottom: 64px;
+
+    @media (max-width: $tablet-s) {
+        margin-bottom: 32px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        background-color: $main-light;
+        z-index: -1;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+
+        li {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            color: #a3a199;
+
+            &::after {
+                content: "/";
+                color: #a3a199;
+            }
+
+            &:last-child::after {
+                content: "";
+            }
+
+            a {
+                display: inline-block;
+                text-decoration: underline;
+                color: #a3a199;
+
+                &:hover {
+                    text-decoration: none;
+                    color: $font-dark;
+                }
+            }
+        }
+    }
+}

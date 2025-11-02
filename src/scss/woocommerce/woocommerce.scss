@@ -1,0 +1,173 @@
+@use '../variables' as *;
+@use 'breadcrumbs';
+@use 'single-product';
+
+.woocommerce {
+
+    //shop page
+
+    .woocommerce-products-header {
+        margin: 32px 0;
+
+        @media (max-width: $mobile) {
+            margin: 24px 0;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 46px;
+
+            @media (max-width: $mobile) {
+                font-size: 32px;
+                line-height: 32px;
+            }
+        }
+    }
+    
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax( 251px, 1fr ));
+        gap: 48px 40px;
+        color: $font-grey;
+        margin: 32px 0;
+
+        @media (max-width: $mobile) {
+            gap: 32px;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            .woocommerce-loop-product__link {
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                position: relative;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 16px;
+                    object-fit: cover;
+                }
+
+                .onsale {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 12px;
+                    background-color: $main-yellow;
+                    border-radius: 24px 0 24px 12px;
+                }
+
+                .woocommerce-loop-product__title {
+                    font-weight: 600;
+                    font-size: 19px;
+                    line-height: 27px;
+                    letter-spacing: 0.01em;
+                    color: $font-dark;
+                    padding: 10px 0;
+ 
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                .price {
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 24px;
+                    letter-spacing: 0.01em;
+                    color: $font-dark;
+                    margin-bottom: 10px;
+
+                    del {
+                        display: none;
+                    }
+                    ins {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .added_to_cart {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 28px;
+                letter-spacing: 0.01em;
+                color: $font-dark;
+                margin-top: 12px;
+
+                cursor: pointer;
+                text-decoration: none;
+                padding: 10px 20px;
+                color: $font-dark;
+                background-color: $main-yellow;
+                border: 1px solid $main-yellow;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+                width: fit-content;
+
+                &:hover {
+                    color: #fff;
+                    background-color: $font-dark;
+                    transform: scale(1.03);
+                }
+            }
+        }
+    } 
+
+    .woocommerce-pagination {
+        margin: 24px 0;
+
+        .page-numbers {
+            display: flex;
+            gap: 10px;
+
+            li {
+                background-color: $main-yellow;
+                width: 32px;
+                height: 32px;
+                border-radius: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $font-dark;
+                transition: all 0.3s ease;
+                
+                a {
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    color: #fff;
+                    background-color: $font-dark;
+                    transform: scale(1.03);
+
+                    a, span {
+                        color: #fff;
+                    }
+                }
+
+                .current {
+                    color: #fff;
+                }
+
+                &:has(.current):hover {
+                    background-color: $main-yellow;
+                    color: $font-dark;
+                    transform: none;
+                }
+            }
+        }
+    }
+}
+
